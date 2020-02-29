@@ -12,6 +12,8 @@ const AddSynonymsContainer = () => {
     };
 
     const shouldDisableSubmit = !word || !synonyms.size;
+    const submitButtonTooltipText = shouldDisableSubmit ?
+        'A word and at least one synonym must be present!' : 'Submit synonims for specified word';
     return <PaddedContainer className="add-synonyms-container">
         <h2>Add new synonyms</h2>
         <div className="search-value">
@@ -19,7 +21,7 @@ const AddSynonymsContainer = () => {
             <input value={word} onChange={event => setWord(event.target.value)} />
         </div>
         <NewSynonymsWrapper synonyms={Array.from(synonyms)} addNewSynonym={onAddNewSynonym} />
-        <button disabled={shouldDisableSubmit}>Submit</button>
+        <button title={submitButtonTooltipText} disabled={shouldDisableSubmit}>Submit</button>
     </PaddedContainer>;
 };
 
