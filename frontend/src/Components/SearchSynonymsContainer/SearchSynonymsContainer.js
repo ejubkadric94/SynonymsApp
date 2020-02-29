@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import './SearchSynonimsContainer.css';
+import './SearchSynonymsContainer.css';
 import PaddedContainer from '../PaddedContainer/PaddedContainer';
-import ExistingSynonimsList from './ExistingSynonimsList/ExistingSynonimsList';
+import ExistingSynonymsList from './ExistingSynonymsList/ExistingSynonymsList';
 
-const SearchSynonimsContainer = () => {
+const SearchSynonymsContainer = () => {
     const [searchValue, setSearchValue] = useState('');
-    return <PaddedContainer className="search-synonims-container">
-        <h2>Search for synonims</h2>
+    return <PaddedContainer className="search-synonyms-container">
+        <h2>Search for synonyms</h2>
         <div className="search-value">
             <span>Word:</span>
             <input value={searchValue} onChange={event => setSearchValue(event.target.value)} />
         </div>
-        <ExistingSynonimsList word={searchValue} />
+        <ExistingSynonymsList word={searchValue} />
     </PaddedContainer>;
 };
 
-export default SearchSynonimsContainer;
+export default SearchSynonymsContainer;

@@ -1,10 +1,10 @@
-.add-new-synonim {
+.add-new-synonym {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
 
-.add-new-synonim input {
+.add-new-synonym input {
     margin-right: 15px;
     flex-grow: 1;
 }

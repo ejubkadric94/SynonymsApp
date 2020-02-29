@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import Divider from './Divider/Divider';
-import AddSynonimsContainer from './AddSynonimsContainer/AddSynonimsContainer';
-import SearchSynonimsContainer from './SearchSynonimsContainer/SearchSynonimsContainer';
+import AddSynonymsContainer from './AddSynonymsContainer/AddSynonymsContainer';
+import SearchSynonymsContainer from './SearchSynonymsContainer/SearchSynonymsContainer';
 
 function App() {
   return (
     <div className="App">
-      <AddSynonimsContainer />
+      <AddSynonymsContainer />
       <Divider />
-      <SearchSynonimsContainer />
+      <SearchSynonymsContainer />
     </div>
   );
 }
