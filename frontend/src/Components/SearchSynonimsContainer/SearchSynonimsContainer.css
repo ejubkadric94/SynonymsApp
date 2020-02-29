@@ -1,5 +1,7 @@
-/* .search-synonims-container {
-    display: flex;
-    flex-flow: column;
-    width: 500px;
-} */
+.search-synonims-container .search-value {
+    text-align: center;
+}
+
+.search-synonims-container .search-value input {
+    margin-left: 10px;
+}

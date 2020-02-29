@@ -5,9 +5,8 @@ import ExistingSynonimsList from '../ExistingSynonimsList/ExistingSynonimsList';
 
 const SearchSynonimsContainer = () => {
     const [searchValue, setSearchValue] = useState('');
-    return <PaddedContainer>
-        <h1>Search for synonims</h1>
-        <div>
+    return <PaddedContainer className="search-synonims-container">
+        <div className="search-value">
             <span>Word:</span>
             <input value={searchValue} onChange={event => setSearchValue(event.target.value)} />
         </div>

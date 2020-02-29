@@ -1,8 +1,8 @@
 import React from 'react';
 import './PaddedContainer.css';
 
-const PaddedContainer = ({ children }) => (
-    <div className="padded-container">
+const PaddedContainer = ({ children, className }) => (
+    <div className={`padded-container ${className}`}>
         {children}
     </div>
 );
