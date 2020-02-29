@@ -1,5 +1,6 @@
-/* .add-synonims {
-    display: flex;
-    flex-flow: column;
-    width: 500px;
-} */
+.add-synonims-container .search-value input {
+    width: 228px;
+}    
+.add-synonims-container .search-value input {
+    margin-left: 10px;
+}

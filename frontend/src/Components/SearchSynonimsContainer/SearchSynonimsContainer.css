@@ -1,5 +1,5 @@
-.search-synonims-container .search-value {
-    text-align: center;
+.search-synonims-container .search-value input {
+    width: 228px;
 }
 
 .search-synonims-container .search-value input {

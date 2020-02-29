@@ -1,6 +1,6 @@
 .padded-container {
     display: flex;
     flex-flow: column;
-    width: 500px;
+    width: 300px;
     padding: 100px 10px;
 }
