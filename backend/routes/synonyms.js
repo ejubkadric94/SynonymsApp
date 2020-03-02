@@ -24,15 +24,17 @@ router.get('/:word', (req, res) => {
  */
 router.post('/', (req, res) => {
   const { word, synonyms } = req.body;
+  
+  if (!isWordValid(word)) {
+    res.status(400).send(prepareError(INVALID_WORD_RESPONSE));
+  }
+  if (!areSynonymsValid(synonyms)) {
+    res.status(400).send(prepareError(INVALID_SYNONYMS_RESPONSE));
+  }
+  
   const preparedWord = prepareWord(word);
   const preparedSynonyms = prepareSynonyms(synonyms);
 
-  if (!isWordValid(preparedWord)) {
-    res.status(400).send(prepareError(INVALID_WORD_RESPONSE));
-  }
-  if (!areSynonymsValid(preparedSynonyms)) {
-    res.status(400).send(prepareError(INVALID_SYNONYMS_RESPONSE));
-  }
 
   addSynonyms(preparedWord, preparedSynonyms);
 

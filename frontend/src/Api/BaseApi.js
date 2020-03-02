@@ -4,12 +4,16 @@ export const executeRequest = async (url, method, data = {}) => {
         body = JSON.stringify(data);
     }
 
-    return await fetch(url, {
-        method: method,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-        body,
-    });
+    try {
+        return await fetch(url, {
+            method: method,
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+            },
+            body,
+        });
+    } catch (error) {
+        return error;
+    }
 };

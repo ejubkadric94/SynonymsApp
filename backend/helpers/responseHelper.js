@@ -1,1 +1,1 @@
-export const prepareError = error => ({ error });
+export const prepareError = error => ({ message: error });

@@ -2,23 +2,23 @@ import { executeRequest } from "./BaseApi";
 import { getSearchSynonymsUrl, getAddSynonymsUrl } from "./BackendPaths";
 
 export const searchForSynonyms = async word => {
-    const getSynonymsRequest = await executeRequest(
+    const getSynonymsResponse = await executeRequest(
         getSearchSynonymsUrl(word),
         'GET',
     );
-    return await getSynonymsRequest.json();
+    return await getSynonymsResponse.json();
 };
 
 export const addSynonyms = async (word, synonyms) => {
-    try {
-        const addSynonymsRequest = await executeRequest(
-            getAddSynonymsUrl(),
-            'POST',
-            { word, synonyms }
-        );
-        return addSynonymsRequest;
-    } catch (error) {
-        console.log(error);
+    const addSynonymsResponse = await executeRequest(
+        getAddSynonymsUrl(),
+        'POST',
+        { word, synonyms }
+    );
+    if (addSynonymsResponse.status !== 200) {
+        const error = await addSynonymsResponse.json();
+        alert(error.message);
+        return false;
     }
-
+    return true;
 };

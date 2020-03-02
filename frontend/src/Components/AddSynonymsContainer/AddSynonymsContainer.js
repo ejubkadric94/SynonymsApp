@@ -14,10 +14,10 @@ const AddSynonymsContainer = () => {
     };
     const onResetAddedSynonymsList = () => setSynonyms(new Set());
     const onSubmit = async () => {
-        await addSynonyms(word, Array.from(synonyms));
-        setWord('');
-        onResetAddedSynonymsList();
-        console.log('done');
+        if (await addSynonyms(word, Array.from(synonyms))) {
+            setWord('');
+            onResetAddedSynonymsList();
+        }
     };
 
     const shouldDisableSubmit = !word || !synonyms.size;
