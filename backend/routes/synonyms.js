@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
 
   addSynonyms(preparedWord, preparedSynonyms);
 
-  res.send(req.body);
+  res.send();
 })
 
 module.exports = router;

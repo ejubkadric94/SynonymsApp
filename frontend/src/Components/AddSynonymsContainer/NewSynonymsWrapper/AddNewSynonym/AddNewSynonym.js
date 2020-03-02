@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AddNewSynonym.css';
 
-const AddNewSynonym = ({ addNewSynonym }) => {
+const AddNewSynonym = ({ addNewSynonym, isDisabled }) => {
     const [newSynonymValue, setNewSynonymValue] = useState('');
 
     const onAddNewSynonym = () => {
@@ -22,7 +22,13 @@ const AddNewSynonym = ({ addNewSynonym }) => {
     return (
         <div className="add-new-synonym">
             <input value={newSynonymValue} onChange={event => setNewSynonymValue(event.target.value)} />
-            <button onClick={onAddNewSynonym}>&#43;</button>
+            <button
+                title={isDisabled ? 'Please enter the word first, and its synonyms after that!' : 'Add synonym to the list'}
+                onClick={onAddNewSynonym}
+                disabled={isDisabled}
+            >
+                &#43;
+            </button>
         </div>
     );
 };

@@ -4,6 +4,10 @@
     justify-content: space-between;
 }
 
+.add-new-synonym h4 {
+    flex-grow: 2;
+}
+
 .add-new-synonym input {
     margin-right: 15px;
     flex-grow: 1;

@@ -1,15 +1,27 @@
 import React from 'react';
 import AddNewSynonym from './AddNewSynonym/AddNewSynonym';
 import './NewSynonymsWrapper.css';
+import AddedSynonymsList from './AddedSynonymsList/AddedSynonymsList';
 
-const NewSynonymsWrapper = ({ synonyms, addNewSynonym }) => {
-    const addedSynonymsList = synonyms.map(synonym => <li className="added-synonym-list-item" key={synonym}>{synonym}</li>)
+const NewSynonymsWrapper = ({
+    isDisabled,
+    synonyms,
+    addNewSynonym,
+    onResetAddedSynonymsList
+}) => {
 
     return (
         <div className="new-synonyms-wrapper">
-            {!!synonyms.length && (<h5>Added synonyms:</h5>)}
-            <ul>{addedSynonymsList}</ul>
-            <AddNewSynonym addNewSynonym={addNewSynonym} />
+            <h4>Add new synonym:</h4>
+            <AddNewSynonym
+                addNewSynonym={addNewSynonym}
+                isDisabled={isDisabled}
+            />
+            <AddedSynonymsList
+                synonyms={synonyms}
+                addNewSynonym={addNewSynonym}
+                onResetAddedSynonymsList={onResetAddedSynonymsList}
+            />
         </div>
     );
 };

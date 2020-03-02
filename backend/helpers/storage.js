@@ -71,5 +71,4 @@ export const addSynonyms = (word, synonyms) => {
 
     addNewWordsToStorage(newWords, existingIndexes, newIndexes);
     addNewWordsIndexesToExistingWords(existingWords, newIndexes);
-
 };
