@@ -1,4 +1,4 @@
-const wordsStorage = {
+let wordsStorage = {
     'wash': [1],
     'clean': [0],
     'come': [3, 4],
@@ -11,15 +11,6 @@ const wordsStorage = {
 };
 
 
-export const getSynonyms = word => {
-    const synonymsIndexes = wordsStorage[word];
-
-    if (!synonymsIndexes) {
-        return [];
-    }
-
-    return synonymsIndexes.map(synonymIndex => Object.keys(wordsStorage)[synonymIndex]);
-};
 
 const addNewWordsToStorage = (newWords, existingIndexes, newIndexes) => {
     newWords.forEach((newWord, newWordIndex) => {
@@ -62,13 +53,24 @@ const getNewWordsIndexes = newWords => {
 const getExistingWords = existingIndexes =>
     Object.keys(wordsStorage).filter((word, idx) => existingIndexes.includes(idx));
 
-export const addSynonyms = (word, synonyms) => {
-    const wordsToAdd = [...synonyms, word];
-    const newWords = filterNewWords(wordsToAdd);
-    const existingIndexes = getExistingIndexes(wordsToAdd);
+export const addSynonyms = synonyms => {
+    const newWords = filterNewWords(synonyms);
+    const existingIndexes = getExistingIndexes(synonyms);
     const existingWords = getExistingWords(existingIndexes);
     const newIndexes = getNewWordsIndexes(newWords);
 
     addNewWordsToStorage(newWords, existingIndexes, newIndexes);
     addNewWordsIndexesToExistingWords(existingWords, newIndexes);
 };
+
+export const getSynonyms = word => {
+    const synonymsIndexes = wordsStorage[word];
+
+    if (!synonymsIndexes) {
+        return [];
+    }
+
+    return synonymsIndexes.map(synonymIndex => Object.keys(wordsStorage)[synonymIndex]);
+};
+
+export const removeAllSynonyms = () => wordsStorage = {};

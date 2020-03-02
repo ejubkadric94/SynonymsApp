@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import './SearchSynonymsContainer.css';
 import PaddedContainer from '../PaddedContainer/PaddedContainer';
 import ExistingSynonymsList from './ExistingSynonymsList/ExistingSynonymsList';
+import SearchInput from '../SearchInput/SearchInput';
 
 const SearchSynonymsContainer = () => {
     const [searchValue, setSearchValue] = useState('');
-    return <PaddedContainer className="search-synonyms-container">
+    return <PaddedContainer>
         <h2>Search for synonyms</h2>
-        <div className="search-value">
-            <span>Word:</span>
-            <input value={searchValue} onChange={event => setSearchValue(event.target.value)} />
-        </div>
+        <SearchInput
+            value={searchValue}
+            onChange={event => setSearchValue(event.target.value)}
+        />
         <ExistingSynonymsList word={searchValue} />
     </PaddedContainer>;
 };

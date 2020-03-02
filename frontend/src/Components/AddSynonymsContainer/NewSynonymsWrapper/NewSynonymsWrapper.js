@@ -4,7 +4,6 @@ import './NewSynonymsWrapper.css';
 import AddedSynonymsList from './AddedSynonymsList/AddedSynonymsList';
 
 const NewSynonymsWrapper = ({
-    isDisabled,
     synonyms,
     addNewSynonym,
     onResetAddedSynonymsList
@@ -13,10 +12,7 @@ const NewSynonymsWrapper = ({
     return (
         <div className="new-synonyms-wrapper">
             <h4>Add new synonym:</h4>
-            <AddNewSynonym
-                addNewSynonym={addNewSynonym}
-                isDisabled={isDisabled}
-            />
+            <AddNewSynonym addNewSynonym={addNewSynonym} />
             <AddedSynonymsList
                 synonyms={synonyms}
                 addNewSynonym={addNewSynonym}
