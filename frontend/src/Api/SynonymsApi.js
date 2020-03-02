@@ -10,9 +10,15 @@ export const searchForSynonyms = async word => {
 };
 
 export const addSynonyms = async (word, synonyms) => {
-    const addSynonymsRequest = await executeRequest(
-        getAddSynonymsUrl(),
-        'POST',
-        { word, synonyms }
-    )
+    try {
+        const addSynonymsRequest = await executeRequest(
+            getAddSynonymsUrl(),
+            'POST',
+            { word, synonyms }
+        );
+        return addSynonymsRequest;
+    } catch (error) {
+        console.log(error);
+    }
+
 };

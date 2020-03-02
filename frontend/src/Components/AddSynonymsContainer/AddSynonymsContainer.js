@@ -3,7 +3,7 @@ import './AddSynonymsContainer.css';
 import PaddedContainer from '../PaddedContainer/PaddedContainer';
 import NewSynonymsWrapper from './NewSynonymsWrapper/NewSynonymsWrapper';
 import WordInput from '../WordInput/WordInput';
-import { getSynonyms } from '../../Api/SynonymsApi';
+import { addSynonyms } from '../../Api/SynonymsApi';
 
 const AddSynonymsContainer = () => {
     const [word, setWord] = useState('');
@@ -14,7 +14,7 @@ const AddSynonymsContainer = () => {
     };
     const onResetAddedSynonymsList = () => setSynonyms(new Set());
     const onSubmit = async () => {
-        // await getSynonyms();
+        await addSynonyms(word, Array.from(synonyms));
         setWord('');
         onResetAddedSynonymsList();
         console.log('done');
