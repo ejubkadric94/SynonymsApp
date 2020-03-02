@@ -3,6 +3,7 @@ import './AddSynonymsContainer.css';
 import PaddedContainer from '../PaddedContainer/PaddedContainer';
 import NewSynonymsWrapper from './NewSynonymsWrapper/NewSynonymsWrapper';
 import WordInput from '../WordInput/WordInput';
+import { getSynonyms } from '../../Api/SynonymsApi';
 
 const AddSynonymsContainer = () => {
     const [word, setWord] = useState('');
@@ -12,6 +13,12 @@ const AddSynonymsContainer = () => {
         setSynonyms(new Set([...synonyms, newSynonym]));
     };
     const onResetAddedSynonymsList = () => setSynonyms(new Set());
+    const onSubmit = async () => {
+        // await getSynonyms();
+        setWord('');
+        onResetAddedSynonymsList();
+        console.log('done');
+    };
 
     const shouldDisableSubmit = !word || !synonyms.size;
     const submitButtonTooltipText = shouldDisableSubmit ?
@@ -29,7 +36,13 @@ const AddSynonymsContainer = () => {
             addNewSynonym={onAddNewSynonym}
             onResetAddedSynonymsList={onResetAddedSynonymsList}
         />
-        <button title={submitButtonTooltipText} disabled={shouldDisableSubmit}>Submit</button>
+        <button
+            title={submitButtonTooltipText}
+            disabled={shouldDisableSubmit}
+            onClick={onSubmit}
+        >
+            Submit
+        </button>
     </PaddedContainer>;
 };
 
