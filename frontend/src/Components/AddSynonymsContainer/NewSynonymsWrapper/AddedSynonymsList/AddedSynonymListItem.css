@@ -1,0 +1,19 @@
+.added-synonym-list-item {
+    height: 40px;
+    padding-left: 10px;
+}
+
+.added-synonym-list-item .remove-word {
+    background-color: rgba(217, 30, 24, .66);
+    border-radius: 50px;
+}
+.added-synonym-list-item .remove-word:hover {
+    background-color: rgba(217, 30, 24, .77);
+}
+
+
+.added-synonym-list-item .content {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}

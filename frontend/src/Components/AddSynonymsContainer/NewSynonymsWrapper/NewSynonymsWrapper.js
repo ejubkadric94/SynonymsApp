@@ -6,17 +6,15 @@ import AddedSynonymsList from './AddedSynonymsList/AddedSynonymsList';
 const NewSynonymsWrapper = ({
     synonyms,
     addNewSynonym,
-    onResetAddedSynonymsList
+    removeSynonym,
 }) => {
 
     return (
         <div className="new-synonyms-wrapper">
-            <h4>Add new synonym:</h4>
             <AddNewSynonym addNewSynonym={addNewSynonym} />
             <AddedSynonymsList
+                removeSynonym={removeSynonym}
                 synonyms={synonyms}
-                addNewSynonym={addNewSynonym}
-                onResetAddedSynonymsList={onResetAddedSynonymsList}
             />
         </div>
     );

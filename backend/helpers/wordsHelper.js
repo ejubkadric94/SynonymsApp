@@ -1,4 +1,7 @@
-export const isWordValid = word => word && /^[a-zA-Z ]+$/.test(word);
+const MAX_WORD_LENGTH = 30;
+
+export const isWordValid = word =>
+    word && /^[a-zA-Z ]+$/.test(word) && word.length < MAX_WORD_LENGTH;
 
 export const prepareWord = word => word.trim().toLowerCase();
 

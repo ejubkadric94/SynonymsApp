@@ -10,6 +10,13 @@ const AddSynonymsContainer = () => {
         setSynonyms(new Set([...synonyms, newSynonym]));
     };
     const onResetAddedSynonymsList = () => setSynonyms(new Set());
+
+    const onRemoveSynonym = synonym => {
+        const newSet = new Set(synonyms);
+        newSet.delete(synonym);
+        setSynonyms(newSet);
+    };
+    
     const onSubmit = async () => {
         if (await addSynonyms(Array.from(synonyms))) {
             onResetAddedSynonymsList();
@@ -25,9 +32,10 @@ const AddSynonymsContainer = () => {
             <NewSynonymsWrapper
                 synonyms={Array.from(synonyms)}
                 addNewSynonym={onAddNewSynonym}
-                onResetAddedSynonymsList={onResetAddedSynonymsList}
+                removeSynonym={onRemoveSynonym}
             />
             <button
+                className="button-large"
                 title={submitButtonTooltipText}
                 disabled={shouldDisableSubmit}
                 onClick={onSubmit}

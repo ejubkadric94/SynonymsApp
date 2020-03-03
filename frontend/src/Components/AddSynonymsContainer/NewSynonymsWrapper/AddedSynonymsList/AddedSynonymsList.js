@@ -1,25 +1,26 @@
 import React from 'react';
 import './AddedSynonymsList.css';
+import AddedSynonymListItem from './AddedSynonymListItem';
 
-const AddedSynonymsList = ({ synonyms, onResetAddedSynonymsList }) => {
+const AddedSynonymsList = ({ synonyms, removeSynonym }) => {
     if (!synonyms.length) {
         return null;
     }
 
-    const addedSynonymsList = synonyms.map(synonym => <li className="added-synonym-list-item" key={synonym}>{synonym}</li>);
+    const addedSynonymsList = synonyms.map(synonym => (
+        <AddedSynonymListItem
+            synonym={synonym}
+            key={synonym}AddedSynonymListItem
+            removeSynonym={removeSynonym}
+        />
+    ));
 
     return (
         <div className="added-synonyms-list">
-            <div className="title">
-                <span>Added synonyms:</span>
-                <button
-                    title="Remove specified synonyms"
-                    onClick={onResetAddedSynonymsList}
-                >
-                    x
-                </button>
-            </div>
-            <ul>{addedSynonymsList}</ul>
+            <div className="title">Added synonyms:</div>
+            <ol>
+                {addedSynonymsList}
+            </ol>
         </div>
     )
 };

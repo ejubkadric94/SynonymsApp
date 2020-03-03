@@ -4,7 +4,7 @@ import { searchForSynonyms } from '../../../Api/SynonymsApi';
 import Loader from '../../Loader/Loader';
 
 let timeout;
-const TIMEOUT_DURATION = 300;
+const TIMEOUT_DURATION = 200;
 
 const ExistingSynonymsList = ({ word }) => {
     const [synonyms, setSynonyms] = useState([]);

@@ -1,12 +1,6 @@
 .reset-storage-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 30px;
-    height: 30px;
-    background: lightgray;
-    border-radius: 50%;
+    border-radius: 4px;
 }

@@ -1,11 +1,10 @@
-.added-synonyms-list {
-    margin-top: 30px;
-    border-top: solid 1px rgba(0,0,0,.11);
-    padding-top: 2px;
+.added-synonyms-list .title {
+    margin: 15px 0 15px 0;
+    border-top: solid 1px rgba(0,0,0,0.11);
+    padding-top: 10px;
 }
 
-.added-synonyms-list .title {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+.added-synonyms-list ol {
+    margin-top: 0px;
+    padding-left: 18px;
 }
