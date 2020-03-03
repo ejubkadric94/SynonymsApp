@@ -19,11 +19,13 @@ const AddNewSynonym = ({ addNewSynonym }) => {
         setNewSynonymValue('');
     }
 
+    const buttonTooltipText = newSynonymValue ?
+        'Add synonym to the list' : 'Please enter a synonym first';
     return (
         <div className="add-new-synonym">
             <input value={newSynonymValue} onChange={event => setNewSynonymValue(event.target.value)} />
             <button
-                title="Add synonym to the list"
+                title={buttonTooltipText}
                 onClick={onAddNewSynonym}
                 disabled={!newSynonymValue}
             >
