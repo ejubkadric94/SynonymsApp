@@ -17,6 +17,9 @@ const ExistingSynonymsList = ({ word }) => {
                 clearTimeout(timeout);
             }
             timeout = setTimeout(() => {
+                // Do not send a request to server on each letter change.
+                // Wait 300 ms each time, and send a request when user stops typing,
+                // to lower the number of unnecessary requests.
                 const fetchData = async () => {
                     const fetchedSynonyms = await searchForSynonyms(word);
                     setSynonyms(fetchedSynonyms);

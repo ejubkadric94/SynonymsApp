@@ -1,2 +1,2 @@
-export const removeDuplicateSynonyms = synonyms =>
-    Array.from(new Set([...synonyms]));
+export const truncateDuplicateElements = elements =>
+    Array.from(new Set([...elements]));

@@ -1,4 +1,4 @@
-import { removeDuplicateSynonyms } from "./storageManipulationHelper";
+import { truncateDuplicateElements } from "./storageManipulationHelper";
 
 /**
  * All synonyms are persisted in an object in memory called `wordsStorage`.
@@ -21,35 +21,40 @@ import { removeDuplicateSynonyms } from "./storageManipulationHelper";
 let wordsStorage = {};
 
 /**
- * Find any already existing synonym word of newly added words.
- * Based on that, find the rest o
- * =
- * @param {*} synonyms 
+ * Loop through given syonyms and add them and into storage.
+ * Also, update the existing synonyms and add new indexes to them.
+ * @param {*} synonyms Array of synonym string
  */
 export const addSynonyms = synonyms => {
-    const cleanSynonyms = removeDuplicateSynonyms(synonyms);
+    const cleanSynonyms = truncateDuplicateElements(synonyms);
     const affectedIndexes = [];
     cleanSynonyms.forEach(word => {
-        const words = Object.keys(wordsStorage);
         if (wordsStorage[word]) {
             // word is already present in storage
             const matchedIndexes = wordsStorage[word];
             affectedIndexes.push(...matchedIndexes);
             affectedIndexes.forEach(affectedIndex => {
-                wordsStorage[words[affectedIndex]] = [...affectedIndexes];
+                const affectedWord = Object.keys(wordsStorage)[affectedIndex];
+                wordsStorage[affectedWord] = truncateDuplicateElements([...affectedIndexes]);
             });
         } else {
             // new word
             wordsStorage[word] = [...affectedIndexes];
-            const newWordIndex = words.indexOf(word);
+            const newWordIndex = Object.keys(wordsStorage).length - 1;
             affectedIndexes.push(newWordIndex)
             affectedIndexes.forEach(affectedIndex => {
-                wordsStorage[words[affectedIndex]].push(newWordIndex);
+                const affectedWord = Object.keys(wordsStorage)[affectedIndex];
+                const existingWordsIndexes = wordsStorage[affectedWord];
+                wordsStorage[affectedWord] = truncateDuplicateElements([...existingWordsIndexes, newWordIndex]);
             });
         }
     });
 };
 
+/**
+ * Retrieve the list of synonyms
+ * @param {*} word A String which represents a word whose synonyms should be retrieved
+ */
 export const getSynonyms = word => {
     const synonymsIndexes = wordsStorage[word];
 
@@ -59,10 +64,14 @@ export const getSynonyms = word => {
 
     const words = Object.keys(wordsStorage);
     return synonymsIndexes
+        // Do not show the word as its own synonym
         .filter(synonymIndex => synonymIndex !== words.indexOf(word))
         .map(synonymIndex => words[synonymIndex]);
 };
 
+/**
+ * Removes all synonyms
+ */
 export const removeAllSynonyms = () => wordsStorage = {};
 
 export const getAllSynonyms = () => wordsStorage;

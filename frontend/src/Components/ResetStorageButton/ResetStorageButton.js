@@ -6,7 +6,10 @@ const ResetStorageButton = () => (
     <button
         className="reset-storage-button"
         title="Remove all saved synonyms from backend storage"
-        onClick={async () => await removeAllSynonyms()}
+        onClick={async () => {
+            await removeAllSynonyms();
+            window.location.reload();
+        }}
     >
         X
     </button>
