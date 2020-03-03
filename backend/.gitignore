@@ -85,9 +85,9 @@ deps/icu*.zip
 deps/icu*.tgz
 deps/icu-tmp
 ./node_modules
-./dist
+# ./dist
 node_modules/
-dist/
+# dist/
 android-toolchain/
 .svn/
 
