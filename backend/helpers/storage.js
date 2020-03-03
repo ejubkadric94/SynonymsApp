@@ -23,7 +23,7 @@ let wordsStorage = {};
 /**
  * Loop through given syonyms and add them and into storage.
  * Also, update the existing synonyms and add new indexes to them.
- * @param {*} synonyms Array of synonym string
+ * @param {*} synonyms Array of synonym strings
  */
 export const addSynonyms = synonyms => {
     const cleanSynonyms = truncateDuplicateElements(synonyms);

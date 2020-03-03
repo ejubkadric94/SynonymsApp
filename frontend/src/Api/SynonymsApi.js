@@ -36,6 +36,7 @@ export const removeAllSynonyms = async () => {
     try {
         await executeRequest(getRemoveAllSynonymsUrl, 'DELETE');
         alert('Sucessfully removed all synonyms from backend storage');
+        window.location.reload();
     } catch (err) {
         console.error(err);
     }

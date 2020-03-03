@@ -9,7 +9,6 @@ export const executeRequest = async (url, method, data = {}) => {
             method: method,
             headers: {
               'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
             },
             body,
         });

@@ -11,14 +11,14 @@ const ExistingSynonymsList = ({ word }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        if (word) {
+        if (word.length) {
             setIsLoading(true);
             if (timeout) {
                 clearTimeout(timeout);
             }
             timeout = setTimeout(() => {
                 // Do not send a request to server on each letter change.
-                // Wait 300 ms each time, and send a request when user stops typing,
+                // Wait `TIMEOUT_DURATION`ms each time, and send a request when user stops typing,
                 // to lower the number of unnecessary requests.
                 const fetchData = async () => {
                     const fetchedSynonyms = await searchForSynonyms(word);

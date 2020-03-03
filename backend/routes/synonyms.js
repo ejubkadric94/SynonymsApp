@@ -43,6 +43,4 @@ router.delete('/', (req, res) => {
   res.send();
 });
 
-router.get('/', (req, res) => res.send(getAllSynonyms()))
-
 module.exports = router;

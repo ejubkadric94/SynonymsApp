@@ -1,2 +1,1 @@
-export const truncateDuplicateElements = elements =>
-    Array.from(new Set([...elements]));
+export const truncateDuplicateElements = elements => Array.from(new Set([...elements]));
