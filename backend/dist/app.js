@@ -39,8 +39,8 @@ var app = (0, _express2.default)();
 app.use((0, _cors2.default)());
 
 // view engine setup
-app.set('view engine', 'pug');
-app.set('views', 'views');
+app.set('views', _path2.default.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 app.use((0, _morgan2.default)('dev'));
 app.use(_express2.default.json());
@@ -66,7 +66,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-var listener = app.listen(process.env.PORT || 3001);
 
 module.exports = app;

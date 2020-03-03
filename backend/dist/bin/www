@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('staklenavrata-backend:server');
+var debug = require('debug')('synonymsbackend:server');
 var http = require('http');
 
 /**
