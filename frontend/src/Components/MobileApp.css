@@ -1,0 +1,19 @@
+@media screen and (max-width: 840px) {
+    .App {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .padded-container {
+        padding: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
