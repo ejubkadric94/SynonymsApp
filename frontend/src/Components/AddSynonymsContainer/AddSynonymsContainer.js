@@ -28,7 +28,7 @@ const AddSynonymsContainer = () => {
         setIsSubmissionInProgress(false);
     };
 
-    const shouldDisableSubmit = synonyms.size < 2 && !isSubmissionInProgress;
+    const shouldDisableSubmit = synonyms.size < 2 || isSubmissionInProgress;
     const submitButtonTooltipText = shouldDisableSubmit ?
         'At least two synonym must be present!' : 'Submit synonims';
     const content = isSubmissionInProgress ? <Loader /> : (
