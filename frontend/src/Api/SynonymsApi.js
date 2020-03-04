@@ -7,7 +7,7 @@ export const searchForSynonyms = async word => {
             getSearchSynonymsUrl(word),
             'GET',
         );
-        if (getSynonymsResponse === 200) {
+        if (getSynonymsResponse.status === 200) {
             return await getSynonymsResponse.json();
         }
         return [];
