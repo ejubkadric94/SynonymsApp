@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PaddedContainer from '../PaddedContainer/PaddedContainer';
-import NewSynonymsWrapper from './NewSynonymsWrapper/NewSynonymsWrapper';
+import AddSynonymsBox from './AddSynonymsBox/AddSynonymsBox';
 import { addSynonyms } from '../../Api/SynonymsApi';
 import Loader from '../Loader/Loader';
+import AddSynonymsTitle from './AddSynonymsTitle/AddSynonymsTitle';
 
 const AddSynonymsContainer = () => {
     const [synonyms, setSynonyms] = useState(new Set());
@@ -31,7 +32,7 @@ const AddSynonymsContainer = () => {
     const submitButtonTooltipText = shouldDisableSubmit ?
         'At least two synonym must be present!' : 'Submit synonims';
     const content = isSubmissionInProgress ? <Loader /> : (
-        <NewSynonymsWrapper
+        <AddSynonymsBox
             synonyms={Array.from(synonyms)}
             addNewSynonym={onAddNewSynonym}
             removeSynonym={onRemoveSynonym}
@@ -39,7 +40,7 @@ const AddSynonymsContainer = () => {
     );
     return ( 
         <PaddedContainer>
-            <h2>Add new synonyms</h2>
+            <AddSynonymsTitle />
             <div className="new-synonyms-wrapper">
                 {content}
             </div>

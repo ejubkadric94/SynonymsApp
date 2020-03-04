@@ -1,9 +1,9 @@
 import React from 'react';
 import AddNewSynonym from './AddNewSynonym/AddNewSynonym';
-import './NewSynonymsWrapper.css';
+import './AddSynonymsBox.css';
 import AddedSynonymsList from './AddedSynonymsList/AddedSynonymsList';
 
-const NewSynonymsWrapper = ({
+const AddSynonymsBox = ({
     synonyms,
     addNewSynonym,
     removeSynonym,
@@ -20,4 +20,4 @@ const NewSynonymsWrapper = ({
     );
 };
 
-export default NewSynonymsWrapper;
+export default AddSynonymsBox;

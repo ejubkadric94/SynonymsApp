@@ -10,11 +10,15 @@
 }
 
 .added-synonym-list-item .content .remove-word {
-    background-color: rgba(217, 30, 24, .66);
+    border: solid 2px rgba(217, 30, 24, .66);
+    background-color: white;
+    color: rgba(217, 30, 24, .96);
     border-radius: 50px;
+    width: 20px;
 }
 .added-synonym-list-item .content .remove-word:hover {
     background-color: rgba(217, 30, 24, .77);
+    color: white;
 }
 
 .added-synonym-list-item .item-label {

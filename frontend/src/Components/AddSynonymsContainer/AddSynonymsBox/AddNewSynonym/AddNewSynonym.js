@@ -34,7 +34,7 @@ const AddNewSynonym = ({ addNewSynonym }) => {
             <input
                 ref={inputRef}
                 value={newSynonymValue}
-                placeholder="New synonym"
+                placeholder="Enter a word"
                 onChange={event => setNewSynonymValue(event.target.value)}
             />
             <button

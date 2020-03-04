@@ -1,0 +1,19 @@
+.add-synonyms-title {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-synonyms-title .info {
+    font-size: 20px;
+    font-weight: bold;
+    background: lightgray;
+    color: white;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
