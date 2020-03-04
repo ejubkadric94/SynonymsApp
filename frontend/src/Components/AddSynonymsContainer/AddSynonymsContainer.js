@@ -21,8 +21,6 @@ const AddSynonymsContainer = () => {
         setIsSubmissionInProgress(true);
         if (await addSynonyms(Array.from(synonyms))) {
             onResetAddedSynonymsList();
-            alert('Synonyms submitted successfully');
-            window.location.reload();
         } else {
             alert('Error while submitting synonyms');
         }

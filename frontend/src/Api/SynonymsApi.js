@@ -10,6 +10,7 @@ export const searchForSynonyms = async word => {
         return await getSynonymsResponse.json();
     } catch (err) {
         console.error(err);
+        return [];
     }
 };
 

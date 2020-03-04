@@ -1,6 +1,6 @@
 import express from 'express';
-import { getSynonyms, addSynonyms, removeAllSynonyms, getAllSynonyms } from '../helpers/storage';
-import { isWordValid, prepareWord, prepareSynonyms, areSynonymsValid } from '../helpers/stringHelper';
+import { getSynonyms, addSynonyms, removeAllSynonyms } from '../helpers/storage';
+import { isWordValid, prepareWord, prepareSynonyms, areSynonymsValid } from '../helpers/wordsHelper';
 import { INVALID_WORD_RESPONSE, INVALID_SYNONYMS_RESPONSE, HTTP_BAD_REQUEST } from '../helpers/resources';
 import { prepareError } from '../helpers/responseHelper';
 const router = express.Router();
