@@ -3,17 +3,24 @@
     padding-left: 10px;
 }
 
-.added-synonym-list-item .remove-word {
-    background-color: rgba(217, 30, 24, .66);
-    border-radius: 50px;
-}
-.added-synonym-list-item .remove-word:hover {
-    background-color: rgba(217, 30, 24, .77);
-}
-
-
 .added-synonym-list-item .content {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
+
+.added-synonym-list-item .content .remove-word {
+    background-color: rgba(217, 30, 24, .66);
+    border-radius: 50px;
+}
+.added-synonym-list-item .content .remove-word:hover {
+    background-color: rgba(217, 30, 24, .77);
+}
+
+.added-synonym-list-item .item-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 185px;
+}
+

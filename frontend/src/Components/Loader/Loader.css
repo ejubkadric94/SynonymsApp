@@ -1,4 +1,6 @@
-.loader {
-    font-weight: bold;
-    font-style: italic;
+.svg-loader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }

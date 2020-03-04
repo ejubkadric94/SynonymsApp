@@ -10,13 +10,13 @@ const NewSynonymsWrapper = ({
 }) => {
 
     return (
-        <div className="new-synonyms-wrapper">
+        <>
             <AddNewSynonym addNewSynonym={addNewSynonym} />
             <AddedSynonymsList
                 removeSynonym={removeSynonym}
                 synonyms={synonyms}
             />
-        </div>
+        </>
     );
 };
 

@@ -33,17 +33,16 @@ const ExistingSynonymsList = ({ word }) => {
         }
     }, [word, synonyms.length]);
 
-    const content = isLoading ? <Loader /> : (
-        <>
-            {!!synonyms.length && (<div>Existing synonyms of word <i>{word}</i></div>)}
-            <ul>
-                {synonyms.map(synonym => <li key={synonym}>{synonym}</li>)}
-            </ul>
-        </>
-    );
-    
+    const title = !!synonyms.length && <div>Existing synonyms of word <i>{word}</i></div>;
     return <div className="existing-synonyms-list">
-      {content}  
+        {isLoading ? <Loader /> : (
+            <>
+                {title}
+                <ol>
+                    {synonyms.map(synonym => <li key={synonym}>{synonym}</li>)}
+                </ol>
+            </>)
+        }  
     </div>;
 };
 

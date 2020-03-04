@@ -2,9 +2,9 @@ import React from 'react';
 import './AddedSynonymListItem.css';
 
 const AddedSynonymListItem = ({ synonym, removeSynonym }) => (
-    <li className="added-synonym-list-item" key={synonym}>
+    <li className="added-synonym-list-item">
         <div className="content">
-            <div className="label">{synonym}</div>
+            <div className="item-label" title={synonym}>{synonym}</div>
             <button
                 className="remove-word"
                 onClick={() => removeSynonym(synonym)}>X</button>
