@@ -31,7 +31,7 @@ const ExistingSynonymsList = ({ word }) => {
             setSynonyms([]);
             setIsLoading(false);
         }
-    }, [word, synonyms.length]);
+    }, [word]);
 
     const title = !!synonyms.length && <div>Existing synonyms of word <i>{word}</i></div>;
     return <div className="existing-synonyms-list">
